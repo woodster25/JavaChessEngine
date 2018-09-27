@@ -13,7 +13,12 @@ public abstract class Move {
 		this.movedPiece = movedPiece;
 		this.destinationCoordinate = destinationCoordinate;
 	}
-	
+
+	public abstract Board execute();
+
+	public int getDestinationCoordinate() {
+		return this.destinationCoordinate;
+	}
 }
 
 

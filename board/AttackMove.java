@@ -9,4 +9,10 @@ public class AttackMove extends Move {
 		super(board, movedPiece, destinationCoordinate);
 		this.attackedPiece = attackedPiece;
 	}
+
+	@Override
+	public Board execute() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

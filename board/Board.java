@@ -28,6 +28,8 @@ public class Board {
 	private final WhitePlayer whitePlayer;
 	private final BlackPlayer blackPlayer;
 	
+	private final Player currentPlayer;
+	
 	
 	private Board(Builder builder) {
 		this.gameBoard = createGameBoard(builder);
@@ -40,6 +42,7 @@ public class Board {
 		this.whitePlayer = new WhitePlayer(this, whiteStandardLegalMoves, blackStandardLegalMoves);
 		this.blackPlayer = new BlackPlayer(this, whiteStandardLegalMoves, blackStandardLegalMoves);
 
+		this.currentPlayer = builder.nextMoveMaker.choosePlayer(this.whitePlayer, this.blackPlayer);
 	}
 	
 	//
@@ -194,5 +197,9 @@ public class Board {
 	
 	public Player whitePlayer() {
 		return this.whitePlayer;
+	}
+
+	public Player currentPlayer() {
+		return this.currentPlayer;
 	}
 }
